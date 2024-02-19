@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio</title>
+        <link rel="stylesheet" href="./src/index.min.css" />
+    </head>
+    <body class="body">
+        <div class="mainwrapper">
+            <div class="maingrid">
+                <div class="griditem third topleft">
+                    <h1 class="griditemheader">
+                        <span class="english">Welcome</span><span class="czech activelang">Vítejte</span
+                        ><img src="./icons/translate.png" class="languageicon" id="translatebtn" />
+                    </h1>
+                    <div class="griditemcontainer">
+                        <p class="griditemdescription">
+                            <span class="english">
+                                Welcome to my portfolio, I hope this message finds you well and you enjoy your time
+                                here! Be sure to read the simple instructions below for an optimal viewing perspective.
+                                You can change the portfolio language by clicking on the icon in the top right of this
+                                container.
+                            </span>
+                            <span class="czech activelang"
+                                >Vítejte v mém portfoliu, doufám že si to tu užijete a bude se vám líbit! Přečtěte si
+                                pár jednoduchých instrukcí pod touto zprávou pro optimální zážitek. Můžete si také
+                                kdykoliv změnit jazyk kliknutím na ikonu vpravo nahoře této části.
+                            </span>
+                        </p>
+                        <div class="innergrid">
+                            <p class="innergridtext"><span class="readme">./ README.md</span></p>
+                            <p class="innergridtext innerreadme">
+                                <span class="english">
+                                    !! Projects/Certificates & About Me/About Projects can be clicked on to change to
+                                    the desired section. Try scrolling on every component on this website, the full
+                                    content may not always be visible.
+                                </span>
+                                <span class="czech activelang">
+                                    Sekce Projekty/Certifikáty & O mně/O Projektech se dají přepínat kliknutím na
+                                    nadpis. Doporučuji zkusit skrolovat na každém komponentu stránky (např. Projekty),
+                                    jejich obsah nemusí být celý viditelný. Kliknutím na ikonku githubu si můžete
+                                    zobrazit zdrojový kód.
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="griditem twothirds topright">
+                    <h1 class="griditemheader double active" onclick="toggleAboutMe()" id="aboutmebtn">
+                        <span class="english">About Me</span>
+                        <span class="czech activelang">O mně</span>
+                    </h1>
+                    <h1 class="griditemheader double" onclick="toggleAboutMe()" id="aboutprojectsbtn">
+                        <span class="english">About Projects</span>
+                        <span class="czech activelang">O projektech</span>
+                    </h1>
+                    <div class="griditemcontainer block">
+                        <div class="griditemdescription" id="aboutme">
+                            <p class="actualdescription">
+                                <span class="english"
+                                    >Hello, my name Adam and I am 14 years old as of writing this. I have been
+                                    interested in tech for a while now and I have taken on some very interesting
+                                    projects. Most projects I make have a practical use case for or other people. My
+                                    main project is Polaris, a multipurpose Discord bot with a web dashboard. I also
+                                    like to do frontend development of websites and some other functional programs.
+                                    Throughout my coding journey I have come to particularly like Javascript, it is by
+                                    far my favorite language.</span
+                                >
+                                <span class="english"
+                                    >I have also been doing a martial arts sport called Taekwondo for a couple of years
+                                    now and I have achieved the blue belt so far. Among my interests is also reading. My
+                                    favorite authors include J. K. Rowling, Roald Dahl and Rick Riodan.
+                                </span>
+                                <span class="czech activelang"
+                                    >Ahoj, jmenuji se Adam a v době psaní tohoto portfolio mi je 14 let. Už nějakou dobu
+                                    se zajímám o technologie a programování a za tuto dobu se mi povedlo udělat hodně
+                                    zajímavých a užitečných projektů. Mezi všemi projekty mě nejvíce baví Polaris,
+                                    Discord bot s Webovým ovládacím panelem. Také mě velice baví dělání frontendu na
+                                    webové stránky a spravování sítí a serverů. Během programování jsem si oblíbil
+                                    Javascript a nyní je to můj nejoblíbenější jazyk. Dělám v něm všechny projekty,
+                                    pokud to jde.</span
+                                >
+                                <span class="czech activelang"
+                                    >Ze sportu se několik let věnuji bojovému sportu Taekwondo, ve kterém se mi povedlo
+                                    dosáhnout modrého pásku. Mezi mé další zájmi patří čtení knih. Mezi mé
+                                    nejoblíbenější autory patří J. K. Rowlingová, Roald Dahl a Rick Riordan.</span
+                                >
+                            </p>
+                        </div>
+                        <div class="griditemdescription hidden" id="aboutprojects">
+                            <p class="actualdescription">
+                                <span class="english">
+                                    All projects are deployed using a custom Docker container on my home server running
+                                    Ubuntu Linux, that I built and secured myself. I came to this approach after Oracle
+                                    randomly deleted my OCI account with my free tier instances and database, hereby
+                                    losing all of my data (except local code ofc). So I decided to pick out some parts
+                                    and a get parts for a semi-powerful homelab server, that I built. My server is
+                                    protected by cloudflare and an AWS proxy server that's in front of my server. I also
+                                    have it isolated on my home network for security and have a strict firewall in
+                                    place. For safety reasons regarding the stability of my internet, I have uploaded
+                                    all of my websites to an AWS server so they are viewable incase of an outage at my
+                                    home. These are the default links in the "projects" section. The original links are:
+                                    docs.polarlab.app/polaris, polarlab.app (/status, /polarmc, /polaris),
+                                    api.polarlab.app .
+                                </span>
+                                <span class="czech activelang">
+                                    Všechny projekty jsou spuštěny za pomoci vlastních Docker containerů na domácím
+                                    serveru, na kterém běží Ubuntu Linux (CLI). Server jsem si sám sestavil a
+                                    zabezpečil. K tomuto řešení jsem dospěl poté, co mi byl bezdůvodně smazán účet na
+                                    Oracle Cloud Free Tier, se všemy servery a datbázemi. Rozhodl jsem se tedy vybrat si
+                                    nějaké díly a sestavit si server, na kterém nyní běží všechny moje projekty a jejich
+                                    potřebné programy (Databáze atd.). S ohledem na stabilitu našeho internetu jsou pro
+                                    jistotu všechny stránky přehrané na AWS serveru (odkazy v sekci projekty).
+                                    Originální odkazy na můj domácí server jsou: docs.polarlab.app/polaris, polarlab.app
+                                    (/status, /polarmc, /polaris), api.polarlab.app .
+                                </span>
+                            </p>
+
+                            <p class="actualdescription">
+                                <span class="english">
+                                    Within all of my projects, I used AI. Never for the whole thing, but sometimes I
+                                    just encountered an error somewhere, or didn't know how to make a certain or I
+                                    wanted to achieve a certain style and it wasn't working and this was the fastest
+                                    approach.
+                                </span>
+                                <span class="czech activelang">
+                                    Ve všech mých projektech byla využita umělá inteligence. Nikdy nedělala celý
+                                    projekt, spíše pomáhala s chybami nebo funkcemi, které jsem měl problém udělat nebo
+                                    vyřešit. Tohle byl většinou nejrychlejší a nejefektivnější způsob jak to udělat.
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="griditem twothirds projects bottomleft">
+                    <h1 class="griditemheader double active" id="projectsbtn" onclick="toggleProjects()">
+                        <span class="english">Projects (scroll)</span>
+                        <span class="czech activelang">Projekty (scroll)</span>
+                    </h1>
+                    <h1 class="griditemheader double" id="certificatesbtn" onclick="toggleProjects()">
+                        <span class="english">Certificates</span>
+                        <span class="czech activelang">Certifikáty</span>
+                    </h1>
+                    <div class="certificates hidden" id="certificates">
+                        <div class="actualdescription">
+                            <span class="english">
+                                <ul>
+                                    <li>
+                                        <span class="lititle">English Olympics - </span
+                                        ><span class="lidescription"
+                                            >A certificate for attending and winning the district round in English
+                                            olympics</span
+                                        >
+                                    </li>
+                                    <li>
+                                        <span class="lititle">Techdays - </span
+                                        ><span class="lidescription"
+                                            >A golden certificate for attending the Techdays camp</span
+                                        >
+                                    </li>
+                                    <li>
+                                        <span class="lititle">Udemy Course - </span
+                                        ><span class="lidescription"
+                                            >A certificate for completing a NextJS and React udemy course</span
+                                        >
+                                    </li>
+                                    <li>
+                                        <span class="lititle">Taekwondo - </span
+                                        ><span class="lidescription"
+                                            >A certificate for getting the blue belt in Taekwondo</span
+                                        >
+                                    </li>
+                                    <li>
+                                        <span class="lititle">Mission Zero - </span
+                                        ><span class="lidescription"
+                                            >A certificate for participating in the Astro Pi - Mission Zero program, I
+                                            sent some python code that was displayed on Astro Pis on the international
+                                            space station. In total I have 3, one for the year 21/22 and two for 22/23
+                                            one of which for sending an animated picture
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="lititle">Certifikát AJ FCE - </span
+                                        ><span class="lidescription"
+                                            >A certificate that certifies getting the C1 level in Cambridge Exams</span
+                                        >
+                                    </li>
+                                </ul></span
+                            >
+                            <span class="czech activelang">
+                                <ul>
+                                    <li>
+                                        <span class="lititle">Certifikát AJ FCE - </span
+                                        ><span class="lidescription"
+                                            >Certifikát za dosáhnutí úrovně C1 v Cambridgeských zkouškách z angličtiny
+                                            na celkové skóre 185 ze 190 bodů</span
+                                        >
+                                    </li>
+                                    <li>
+                                        <span class="lititle">Udemy Kurz - </span
+                                        ><span class="lidescription"
+                                            >Certifikát za dokončení kurzu na Udemy o Reactu a Next.JS</span
+                                        >
+                                    </li>
+                                    <li>
+                                        <span class="lititle">Techdays - </span
+                                        ><span class="lidescription"
+                                            >Certifikát za účast na kempu Techdays (zlatý :O)</span
+                                        >
+                                    </li>
+                                    <li>
+                                        <span class="lititle">Mission Zero - </span
+                                        ><span class="lidescription"
+                                            >Certifikát za účast v programu Astro Pi - Mission zero, posílal jsem Python
+                                            kód, který se zobrazil na displeji na mezinárodní vesmírné stanici. Celkem
+                                            mám 3, za rok 21/22 a dva za 22/23, jeden z nich byl za animovaný
+                                            obrázek</span
+                                        >
+                                    </li>
+
+                                    <li>
+                                        <span class="lititle">Tvůrce Adventure Her - </span
+                                        ><span class="lidescription"
+                                            >Certifikát za účast na příměstském táboře o výrobě her v programu RPG Maker
+                                            MV</span
+                                        >
+                                    </li>
+                                    <li>
+                                        <span class="lititle">Olympiáda AJ - </span
+                                        ><span class="lidescription"
+                                            >Certifikát za účast a výhru obvodního kola OAJ</span
+                                        >
+                                    </li>
+                                    <li>
+                                        <span class="lititle">Taekwondo - </span
+                                        ><span class="lidescription"
+                                            >Certifikát za dostání modrého pásku v bojovém sportu Taekwondo</span
+                                        >
+                                    </li>
+                                </ul></span
+                            >
+                        </div>
+                    </div>
+                    <div class="griditemcontainer projectgrid" id="projectsgrid">
+                        <div class="projectgriditem">
+                            <div class="projecttextcontainer">
+                                <a class="projectheader" href="https://aws.polarlab.app/polaris"
+                                    >Polaris V2 <img class="redirimg" src="./icons/up-right.svg"
+                                /></a>
+                                <p class="projectdescription">
+                                    <span class="english">
+                                        Polaris is my one and only multipurpose discord bot Discord bot.</span
+                                    >
+                                    <span class="czech activelang"
+                                        >Polaris je můj vlastní Discord bot, jehož úkol je nahradit popuilární placené
+                                        boty.</span
+                                    >
+                                </p>
+                            </div>
+                            <div class="projectbottom">
+                                <p class="projectdate">18.1.2023</p>
+                                <p class="bottomdivider">・</p>
+                                <a href="https://github.com/polarlab-app/Polaris-V2"
+                                    ><img class="bottomimg" src="./icons/github-mark-white.svg" alt="githublogo"
+                                /></a>
+                                <p class="bottomdivider">・</p>
+                                <p class="projecttech">JS, Docker, DiscordJS</p>
+                            </div>
+                        </div>
+                        <div class="projectgriditem">
+                            <div class="projecttextcontainer">
+                                <a class="projectheader">Polaris V1</a>
+                                <p class="projectdescription">
+                                    <span class="english">
+                                        This is the first version of Polaris, that I still made in Discord Bot Builder
+                                        on Steam.</span
+                                    >
+                                    <span class="czech activelang"
+                                        >Tohle je první verze Polarisu, vyrobena v programu Discord Bot Builder na
+                                        Steamu.</span
+                                    >
+                                </p>
+                            </div>
+                            <div class="projectbottom">
+                                <p class="projectdate">~ 2022</p>
+                                <p class="bottomdivider">・</p>
+                                <a href="https://github.com/polarlab-app/Polaris-V1-DBB"
+                                    ><img class="bottomimg" src="./icons/github-mark-white.svg" alt="githublogo"
+                                /></a>
+                                <p class="bottomdivider">・</p>
+                                <p class="projecttech">JS, DBB</p>
+                            </div>
+                        </div>
+                        <div class="projectgriditem">
+                            <div class="projecttextcontainer">
+                                <a class="projectheader" href="https://aws-docs.polarlab.app/polaris"
+                                    >Docs V2<img class="redirimg" src="./icons/up-right.svg"
+                                /></a>
+                                <p class="projectdescription">
+                                    <span class="english">
+                                        The entire documentation website for all of my projects. Coded in NextJS and
+                                        react. So far only Polaris and Polar MC have docs, with Polar API in active
+                                        development. Projects that don't have docs, have a README on Github</span
+                                    >
+                                    <span class="czech activelang">
+                                        Kompletní stránka dokumentace na většinu mých projektů. Vyroba v Reactu a
+                                        Next.JS. Zatím pouze dokumentace na Polaris a Polar MC, ve vývoji je Polar API.
+                                        U dalších projektů je použito README na githubu
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="projectbottom">
+                                <p class="projectdate">10.7.2023</p>
+                                <p class="bottomdivider">・</p>
+                                <a href="https://github.com/polarlab-app/docs.polarlab.app"
+                                    ><img class="bottomimg" src="./icons/github-mark-white.svg" alt="githublogo"
+                                /></a>
+                                <p class="bottomdivider">・</p>
+                                <p class="projecttech">NextJS, React, Docker</p>
+                            </div>
+                        </div>
+                        <div class="projectgriditem">
+                            <div class="projecttextcontainer">
+                                <a class="projectheader" href="https://aws-api.polarlab.app"
+                                    >Polar API <img class="redirimg" src="./icons/up-right.svg"
+                                /></a>
+                                <p class="projectdescription">
+                                    <span class="english">
+                                        An entire API whose purpose is to replace paid and/or limited APIs for making
+                                        text based request/responses.</span
+                                    >
+                                    <span class="czech activelang"
+                                        >Stránka na moje vlastní API, které slouží jako náhražka pro placená nebo
+                                        limitovaná API, přidávám endpointy podle potřeby nebo žádosti. API má kompletně
+                                        funkční systém na klíče.
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="projectbottom">
+                                <p class="projectdate">10.1. 2024</p>
+                                <p class="bottomdivider">・</p>
+                                <a href="https://github.com/polarlab-app/api.polarlab.app"
+                                    ><img class="bottomimg" src="./icons/github-mark-white.svg" alt="githublogo"
+                                /></a>
+                                <p class="bottomdivider">・</p>
+                                <p class="projecttech">JS, Docker, Express</p>
+                            </div>
+                        </div>
+                        <div class="projectgriditem">
+                            <div class="projecttextcontainer">
+                                <a class="projectheader">SVGtoPNG</a>
+                                <p class="projectdescription">
+                                    <span class="english">
+                                        A simple program in javascript that converts PNGs to SVGs</span
+                                    >
+                                    <span class="czech activelang"
+                                        >Jednoduchý program v Javascriptu který vezme všechny SVG soubory v jedné složce
+                                        a změní je na PNG.</span
+                                    >
+                                </p>
+                            </div>
+                            <div class="projectbottom">
+                                <p class="projectdate">7.2. 2024</p>
+                                <p class="bottomdivider">・</p>
+                                <a href="https://github.com/polarlab-app/SVGtoPNG"
+                                    ><img class="bottomimg" src="./icons/github-mark-white.svg" alt="githublogo"
+                                /></a>
+                                <p class="bottomdivider">・</p>
+                                <p class="projecttech">JS</p>
+                            </div>
+                        </div>
+                        <div class="projectgriditem">
+                            <div class="projecttextcontainer">
+                                <a class="projectheader">Stratus</a>
+                                <p class="projectdescription">
+                                    <span class="english">
+                                        A program that me and my friend developed to convert files using a local FFMPEG
+                                        installation</span
+                                    >
+                                    <span class="czech activelang"
+                                        >Desktopová Web Aplikace kterou aktivně děláme s kamarádem na převody souborů do
+                                        jiného formátu za pomoci lokální instalace FFMPEGu.</span
+                                    >
+                                </p>
+                            </div>
+                            <div class="projectbottom">
+                                <p class="projectdate">10.2.2024</p>
+                                <p class="bottomdivider">・</p>
+                                <a href="https://github.com/cloudy-org/stratus"
+                                    ><img class="bottomimg" src="./icons/github-mark-white.svg" alt="githublogo"
+                                /></a>
+                                <p class="bottomdivider">・</p>
+                                <p class="projecttech">NextJS, FFMPEG, Rust, Tauri</p>
+                            </div>
+                        </div>
+                        <div class="projectgriditem">
+                            <div class="projecttextcontainer">
+                                <a class="projectheader">Polar Icon Maker</a>
+                                <p class="projectdescription">
+                                    <span class="english">
+                                        A simple python program to make Polar Lab Icons using the Pillow library.</span
+                                    >
+                                    <span class="czech activelang"></span>
+                                </p>
+                            </div>
+                            <div class="projectbottom">
+                                <p class="projectdate">10.2.2024</p>
+                                <p class="bottomdivider">・</p>
+                                <a href="https://github.com/polarlab-app/Polar-Lab-Icon-Maker"
+                                    ><img class="bottomimg" src="./icons/github-mark-white.svg" alt="githublogo"
+                                /></a>
+                                <p class="bottomdivider">・</p>
+                                <p class="projecttech">Python, Fontawesome, Pillow</p>
+                            </div>
+                        </div>
+                        <div class="projectgriditem">
+                            <div class="projecttextcontainer">
+                                <a class="projectheader">DJS command Deleter</a>
+                                <p class="projectdescription">
+                                    <span class="english">
+                                        A small program to delete all global commands from a discord bot easily,
+                                        efficiently and quickly</span
+                                    >
+                                    <span class="czech activelang"
+                                        >Malý prográmek na rychlé mazání globálních příkazů v Discord botech
+                                        naprogramovaný v Javascriptu.</span
+                                    >
+                                </p>
+                            </div>
+                            <div class="projectbottom">
+                                <p class="projectdate">18.12 2023</p>
+                                <p class="bottomdivider">・</p>
+                                <a href="https://github.com/polarlab-app/DJS-Command-Deleter"
+                                    ><img class="bottomimg" src="./icons/github-mark-white.svg" alt="githublogo"
+                                /></a>
+                                <p class="bottomdivider">・</p>
+                                <p class="projecttech">JS, Discord.JS</p>
+                            </div>
+                        </div>
+                        <div class="projectgriditem">
+                            <div class="projecttextcontainer">
+                                <a class="projectheader">Folder Cleaner</a>
+                                <p class="projectdescription">
+                                    <span class="english">
+                                        A very tiny program to delete your downloads folder from time to time</span
+                                    >
+                                    <span class="czech activelang">
+                                        Program na mazání všech souborů se stejnou koncovkou ve zvolené složce
+                                    </span>
+                                </p>
+                            </div>
+
+                            <div class="projectbottom">
+                                <p class="projectdate">9.12.2023</p>
+                                <p class="bottomdivider">・</p>
+                                <a href="https://github.com/polarlab-app/Folder-Cleaner"
+                                    ><img class="bottomimg" src="./icons/github-mark-white.svg" alt="githublogo"
+                                /></a>
+                                <p class="bottomdivider">・</p>
+                                <p class="projecttech">JS</p>
+                            </div>
+                        </div>
+                        <div class="projectgriditem">
+                            <div class="projecttextcontainer">
+                                <a class="projectheader">Circle</a>
+                                <p class="projectdescription">
+                                    <span class="english"
+                                        >A tiny program I was challenged to make that draws a simple circle on a
+                                        canvas</span
+                                    >
+                                    <span class="czech activelang"
+                                        >Jednoduchý program který jsem dostal za úkol udělat, který nakreslí druh za
+                                        pomoci zadané barvy, tlouštky a poloměru.</span
+                                    >
+                                </p>
+                            </div>
+
+                            <div class="projectbottom">
+                                <p class="projectdate">26.10 2023</p>
+                                <p class="bottomdivider">・</p>
+                                <a href="google.com"
+                                    ><img class="bottomimg" src="./icons/github-mark-white.svg" alt="githublogo"
+                                /></a>
+                                <p class="bottomdivider">・</p>
+                                <p class="projecttech">JS, HTML, CSS</p>
+                            </div>
+                        </div>
+                        <div class="projectgriditem">
+                            <div class="projecttextcontainer">
+                                <a class="projectheader" href="https://aws.polarlab.app/polarmc"
+                                    >Polar MC<img class="redirimg" src="./icons/up-right.svg"
+                                /></a>
+                                <p class="projectdescription">
+                                    <span class="english"
+                                        >Polar MC is my very own minecraft server running on my home server. It is a
+                                        small semi-private survival server for my friends and some people who want to
+                                        join.</span
+                                    >
+                                    <span class="czech activelang"
+                                        >Polar MC je můj vlastní Minecraft server který běží na mém domácím serveru. Je
+                                        to malý, polo-souklromý server pro kamarády a jiné pozvané lidi kteří si chtějí
+                                        zahrát.</span
+                                    >
+                                </p>
+                            </div>
+
+                            <div class="projectbottom">
+                                <p class="projectdate">15.8.2023</p>
+                                <p class="bottomdivider">・</p>
+                                <a href="https://map.polarlab.app"
+                                    ><img class="bottomimg" src="./icons/earth-africa.svg" alt="githublogo"
+                                /></a>
+                                <p class="bottomdivider">・</p>
+                                <p class="projecttech">JS, Docker, DiscordJS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="griditem third bottomright">
+                    <h1 class="griditemheader">
+                        <span class="english">Technologies (scroll)</span
+                        ><span class="czech activelang">Technologie (scroll)</span>
+                    </h1>
+                    <div class="griditemcontainer techgrid">
+                        <div class="techgriditem">
+                            <img class="techimg" src="./icons/js.png" />
+                            <p class="techname">Javascript</p>
+                        </div>
+                        <div class="techgriditem">
+                            <img
+                                class="techimg"
+                                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fseeklogo.com%2Fimages%2FN%2Fnext-js-logo-7929BCD36F-seeklogo.com.png&f=1&nofb=1&ipt=5266251dfaf7ba1903bda81cc2d9d7c341fdd69c715fbbbf775e36f6abdd0099&ipo=images" />
+                            <p class="techname">Next.js</p>
+                        </div>
+                        <div class="techgriditem">
+                            <img
+                                class="techimg"
+                                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbrandslogos.com%2Fwp-content%2Fuploads%2Fimages%2Flarge%2Fpython-logo.png&f=1&nofb=1&ipt=eaa8bc240a40a309c0160c85b566a4025903fe202465f6808c7a4141a455a7c6&ipo=images" />
+                            <p class="techname">Python</p>
+                        </div>
+                        <div class="techgriditem">
+                            <img
+                                class="techimg"
+                                src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Flogos-download.com%2Fwp-content%2Fuploads%2F2016%2F09%2FReact_logo_logotype_emblem.png&f=1&nofb=1&ipt=cf499e9e4cff4cee1d95e9463fe9533200e534627465dabe0b3d5b40f2c81906&ipo=images" />
+                            <p class="techname">React</p>
+                        </div>
+                        <div class="techgriditem">
+                            <img
+                                class="techimg"
+                                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fschroederdennis.de%2Fwp-content%2Fuploads%2F2020%2F08%2Fdockerlogo-1024x876.png&f=1&nofb=1&ipt=470fc61a32383a93284342b707e2acedeefb1c9834527ae52e61657698bed21d&ipo=images" />
+                            <p class="techname">Docker</p>
+                        </div>
+                        <div class="techgriditem">
+                            <img
+                                class="techimg"
+                                src="https://logodownload.org/wp-content/uploads/2018/03/nginx-logo-3-768x881.png" />
+                            <p class="techname">NGINX</p>
+                        </div>
+                        <div class="techgriditem">
+                            <img
+                                class="techimg"
+                                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.icon-icons.com%2Ficons2%2F2699%2FPNG%2F512%2Fcloudflare_logo_icon_170372.png&f=1&nofb=1&ipt=4a107d637d598dd38bc18b6be73a0857e201058078f609141d66d982706cc511&ipo=images" />
+                            <p class="techname">Cloudflare</p>
+                        </div>
+                        <div class="techgriditem">
+                            <img
+                                class="techimg"
+                                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipartcraft.com%2Fimages%2Fhtml5-logo-jpeg.png&f=1&nofb=1&ipt=b60fc01f8ab34c5fc16a0c19c9767cd84a60701c8394c5f33cfb57af14da45da&ipo=images" />
+                            <p class="techname">HTML</p>
+                        </div>
+                        <div class="techgriditem">
+                            <img
+                                class="techimg"
+                                src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Flogonoid.com%2Fimages%2Fcss3-logo.png&f=1&nofb=1&ipt=f97a1fe0d8d87e84e62fae6c53a803122f2d6d95f2924596523db3a86eadb6a7&ipo=images" />
+                            <p class="techname">CSS</p>
+                        </div>
+                        <div class="techgriditem">
+                            <img class="techimg" src="./icons/github-mark-white.svg" />
+                            <p class="techname">Github</p>
+                        </div>
+                        <div class="techgriditem">
+                            <img
+                                class="techimg"
+                                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogodix.com%2Flogo%2F2090020.png&f=1&nofb=1&ipt=282058f13ebea20d410094a17b1b19d09895f104e6445878060b8842f22affef&ipo=images" />
+                            <p class="techname">MongoDB</p>
+                        </div>
+                        <div class="techgriditem">
+                            <img
+                                class="techimg"
+                                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.4fo.de%2Fwp-content%2Fuploads%2F2017%2F05%2FAWS-Logo1260-01.png&f=1&nofb=1&ipt=0c49b63ade6d931cd68a5bcc1147ac1079f1b92aff081146932b519149601a9f&ipo=images" />
+                            <p class="techname">AWS</p>
+                        </div>
+                        <div class="techgriditem">
+                            <img
+                                class="techimg"
+                                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.solutia.cz%2Fwp-content%2Fuploads%2F2020%2F12%2Foracle_cloud_transparent-600x406.png&f=1&nofb=1&ipt=234f7d69d3d1bb510bb0edb454335178f8ec66ff15965b52cfb455a540f0311b&ipo=images" />
+                            <p class="techname">Oracle</p>
+                        </div>
+                        <div class="techgriditem">
+                            <img
+                                class="techimg"
+                                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvectorified.com%2Fimages%2Flinux-penguin-icon-9.png&f=1&nofb=1&ipt=cce31027539a13bf0b029e267f817de0ade29c85aea56211ef0d542ae708657d&ipo=images" />
+                            <p class="techname">Linux</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<p class="copyr">©️ 2024 Aetic</p>-->
+        </div>
+        <script src="./src/index.min.js"></script>
+    </body>
+</html>
